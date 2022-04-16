@@ -1,0 +1,645 @@
+@use 'sass:math';
+
+// CSS resets
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+ol, ul, menu {
+    list-style: none;
+}
+
+span {
+    display: block;
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.get-to-the-end {
+    justify-content: flex-end;
+}
+
+.maximize {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 3em;
+}
+
+
+$secondary-font: 'Fraunces';
+
+@for $i from 1 to 6 {
+    h#{$i} {
+        font-family: $secondary-font;
+    }
+}
+
+
+// Variables Declarations
+
+// Layouts 
+$mobile: 375px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;
+
+// color
+$primary: (
+    soft-red: hsl(7, 99%, 70%),
+    yellow: hsl(51, 100%, 49%),
+    cyan: rgb(37, 86, 75), // Graphic design text
+    blue: hsl(198, 62%, 26%), // photography text
+    mod-cyan: hsl(168, 34%, 41%) // footer
+);
+
+$neutral: (
+    de-blue: hsl(212, 27%, 19%),
+    grayish-blue-dark: hsl(213, 9%, 39%),
+    grayish-blue-mod: hsl(232, 10%, 55%),
+    grayish-blue: hsl(210, 4%, 67%),
+    white: hsl(0, 0%, 100%)
+);
+
+$images: (
+    '/image-gallery-milkbottles.jpg',
+    '/image-gallery-orange.jpg',
+    '/image-gallery-cone.jpg',
+    '/image-gallery-sugar-cubes.jpg'
+);
+
+// Typography
+$body-copy: 18px;
+
+$primary-font: 'Barlow';
+$font-weights: (medium: 600, bold: 700, black: 900);
+
+
+// Styling starts here
+body {
+    font-family: $primary-font ;
+}
+// Header section
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/desktop/image-header.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background: transparent;
+    padding: 2em 0;
+}
+
+.nav__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav__col-3 {
+    display: flex;
+    align-items: center;
+}
+
+.--extend {
+    width: 100%;
+}
+
+.nav__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__link__container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.nav__links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 1em;
+}
+
+.nav__btn {
+    color: map-get($neutral, de-blue);
+    cursor: pointer;
+    font-weight: normal;
+    transition: font-weight 400ms cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    &:hover {
+        font-weight: map-get($font-weights, bold);
+    }
+}
+
+.--contact {
+    padding: 1em 1.8em;
+    background-color: map-get($neutral, white);
+    color: map-get($neutral, de-blue);
+    border-radius: 30px;
+}
+
+.nav__hambuger {
+    display: none;
+}
+
+
+// Hero content over here
+.article {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.article__text {
+    width: 100%;
+    color: map-get($neutral, white);
+}
+
+.article__big-text {
+    font-size: $body-copy * 2.3;
+    font-weight: map-get($font-weights, black);
+    text-align: center;
+    letter-spacing: $body-copy - 15;
+    text-transform: uppercase;
+}
+
+.article__img {
+    width: 40px;
+    height: auto;
+    margin-top: 2em;
+}
+
+.main {
+    width: 100%;
+}
+
+.sectioin__container {
+    width: 100%;
+}
+
+.section__row-2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+}
+
+.row__col-2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col__img {
+    flex-basis: 100%;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/mobile/image-transform.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.--standout {
+    @extend .col__img;
+    background-image: url('../images/mobile/image-stand-out.jpg');
+}
+
+.--graphic {
+    @extend .col__img;
+    background-image: url('../images/mobile/image-graphic-design.jpg');
+    position: relative;
+    height: 450px;
+
+}
+
+.--photo {
+    @extend .--graphic;
+    background-image: url('../images/mobile/image-photography.jpg');
+}
+
+.col__text-area {
+    position: absolute;
+    bottom: 0px;
+    padding: 2em;
+}
+
+.text-color {
+    color: map-get($primary, blue)
+}
+
+.col__text {
+    padding: 3em ;
+    text-align: center;
+}
+
+.col__mid-heading {
+    font-weight: map-get($font-weights, bold);
+    color: map-get($neutral , de-blue);
+    text-align: center;
+    font-size: $body-copy * 2;
+}
+
+.col__desc {
+    color: map-get($neutral, grayish-blue-dark);
+    line-height: $body-copy + 8;
+    margin: 1.3em 0;
+    text-align: center;
+}
+
+.col__btn {
+    @extend .col__mid-heading;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    z-index: 9999;
+    font-size: unset    ;
+    
+    &:after {
+        content: '';
+        width: 110px;
+        height: 6px;
+        background-color: map-get($primary , yellow);
+        position: absolute;
+        bottom: 2px;
+        z-index: -1;
+    }
+}
+
+.--pink {
+    @extend .col__btn;
+
+    &:after {
+        background-color: map-get($primary, soft-red);
+    }
+}
+
+// Testimonies section
+
+.section__row-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row__col-3 {
+    flex-basis: 33.33%;
+    display: flex;
+    justify-content: center;
+}
+
+.col_-card {
+    width: 100%;
+    height: auto;
+    padding: 2em;
+}
+
+.card__img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.card__desc {
+    padding: 3.8em;
+    text-align: center;
+}
+
+.card__desc p {
+    line-height: $body-copy + 8;
+    font-weight: map-get($font-weights, bold);
+    color: map-get($neutral, grayish-blue-dark);
+}
+
+.name {
+    font-size: $body-copy * 1.2;
+    font-weight: map-get($font-weights, bold);
+}
+
+.card__titles {
+    margin-top: 1.5em;
+}
+
+.title {
+    margin-top: 1em;
+    color: map-get($neutral, grayish-blue-mod);
+}
+
+.section__heading {
+    margin: 2em 0;
+    text-align: center;
+}
+
+.footer {
+    width: 100%;
+    background-color: map-get($primary, mod-cyan);
+    padding: 5em 0;
+}
+
+.footer__wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__flex {
+    display: flex;
+    column-gap: 2em;
+    margin-top: 2em;
+}
+
+.--flex {
+    display: flex;
+    column-gap: 3em;
+    align-items: center;
+}
+
+.footer__row-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row__col-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2em;
+}
+
+.col__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__grid {
+    width: 100%;
+    height: 100%;
+}
+
+.section__row {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+}
+
+@for $index from 1 to 5 {
+    .col-#{$index} {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+@each $image in $images {
+    $imgIndex: index($images, $image);
+    .col-#{$imgIndex} {
+        background-image: url('../images/mobile/#{$image}');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: ($mobile*2)) {
+
+    // Navbar responsive section over here
+    .header__wrapper {
+        padding: 2em;
+    }
+
+    .nav {
+        padding: 1em 0;
+        position: relative;
+    }
+
+    .--extend {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        display: none;
+    }
+
+    .nav__link__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: map-get($neutral, white);
+        padding: 2em 0;
+    }
+
+    .nav__links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2em;
+        width: 100%;
+        height: 100%;
+    }
+
+    .--contact {
+        background-color: map-get($primary, yellow);
+    }
+
+    .nav__hambuger {
+        display: block;
+    }
+    
+}
+
+@media screen and (min-width: $tablet) {
+    .section__row-1 {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(1, auto);
+    }
+
+    .--exception {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(1, auto);
+    }
+
+    .--override {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(1, auto);
+    }
+
+    .--graphic {
+        background-image: url('../images/desktop/image-graphic-design.jpg');
+        height: 100%;
+    }
+
+    .--photo {
+        background-image: url('../images/desktop/image-photography.jpg');
+        height: 100%;
+    }
+
+    .--transform {
+        order: 2;
+    }
+
+    .col__desc {
+        padding: 0 9em;
+        bottom: 0;
+    }
+
+    .col__text-area {
+        padding: 0 2em;
+    }
+
+    .section__row-2 {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .row__col-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 500px;
+    }
+
+    .col__img-responsive {
+        width: 100%;
+        height: 100%;
+    }
+
+    .col__text {
+        width: 100%;
+        text-align: left;
+        padding: 10em;
+    }
+
+    .col__desc {
+        text-align: left;
+        padding: 0;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    .center {
+        text-align: center;
+        padding: 0 8em;
+    }
+
+    .col__btn {
+        justify-content: flex-start;
+    }
+
+    .--pink {
+        justify-content: flex-end;
+    }
+
+
+    .section__row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .section__testimony {
+        padding: 5em 0;
+    }
+
+    @for $index from 1 to 5 {
+        .col-#{$index} {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+    
+    @each $image in $images {
+        $imgIndex: index($images, $image);
+        .col-#{$imgIndex} {
+            background-image: url('../images/desktop/#{$image}');
+        }
+    }
+}

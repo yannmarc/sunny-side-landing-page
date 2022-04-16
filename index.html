@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./public/css/style.css">
+  
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__wrapper">
+      <!-- Nav secction starts here -->
+      <nav class="nav">
+        <div class="nav__row">
+          <div class="nav__col-3">
+            <div class="nav__logo"><img src="./public/images/logo.svg" alt="This is Sunnyside logo"></div>
+          </div>
+          <div class="nav__col-3 --extend">
+            <div class="nav__link__container">
+              <ul class="nav__links">
+                <li><a href="#" class="nav__btn">About</a></li>
+                <li><a href="#" class="nav__btn">Services</a></li>
+                <li><a href="#" class="nav__btn">Projects</a></li>
+                <li><a href="#" class="nav__btn --contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav__col-3 get-to-the-end">
+            <button class="nav__hambuger">
+              <svg width="24" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M24 16v2H0v-2h24zm0-8v2H0V8h24zm0-8v2H0V0h24z" fill="#FFF" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <article class="article">
+      <div class="article__wrapper">
+        <div class="article__text">
+          <h1 class="article__big-text">We are creatives</h1>
+        </div>
+        <div class="article__img">
+          <img src="./public/images/icon-arrow-down.svg" alt="Image of an arrow pointing down">
+        </div>
+      </div>
+    </article>
+  </header>
+
+  <main class="main">
+    <section class="section__container">
+      <!-- The first section -->
+      <div class="section__row-2">
+        <div class="row__col-2">
+          <div class="col__img col__img-responsive --transform"></div>
+          <div class="col__text">
+            <h2 class="col__mid-heading left">Transform your brand</h2>
+            <p class="col__desc left">
+              We are a full-service creative agency specializing in helping brands grow fast. 
+              Engage your clients through compelling visuals that do most of the marketing for you.
+            </p>
+            <a href="#" class="col__btn left">Learn more</a>
+          </div>
+        </div>
+        <div class="row__col-2">
+          <div class="col__img --standout"></div>
+          <div class="col__text">
+            <h2 class="col__mid-heading right">Stand out to the right audience</h2>
+            <p class="col__desc right">
+              Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.
+            </p>
+            <a href="#" class="col__btn --pink right">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__skill">
+      <div class="section__row-1 --override">
+        <div class="row__col-2 --exception">
+          <div class="col__img --graphic">
+            <div class="col__text-area">
+              <h3 class="col__mid-heading text-color">Graphic design</h3>
+              <p class="col__desc text-color center">
+                Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.
+              </p>
+            </div>
+          </div>
+          <div class="col__img --photo">
+            <div class="col__text-area">
+              <h3 class="col__mid-heading text-color">Photography</h3>
+              <p class="col__desc text-color center">
+                Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__testimony">
+      <h3 class="section__heading">Client testimonials</h3>
+      <div class="section__row-1 maximize">
+        <div class="row__col-3">
+          <div class="col__card">
+            <div class="card__img">
+              <div class="img">
+                <img src="./public/images/image-emily.jpg" alt="">
+              </div>
+            </div>
+            <div class="card__desc">
+              <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+              <div class="card__titles">
+                <h4 class="name">Emily R</h4>
+                <span class="title">Marketing Director</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row__col-3">
+          <div class="col__card">
+            <div class="card__img">
+              <div class="img">
+                <img src="./public/images/image-thomas.jpg" alt="">
+              </div>
+            </div>
+            <div class="card__desc">
+              <p>WSunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.</p>
+              <div class="card__titles">
+                <h4 class="name">Thomas S.</h4>
+                <span class="title">Chief Operating Officer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row__col-3">
+          <div class="col__card">
+            <div class="card__img">
+              <div class="img">
+                <img src="./public/images/image-jennie.jpg" alt="">
+              </div>
+            </div>
+            <div class="card__desc">
+              <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+              <div class="card__titles">
+                <h4 class="name">Jennie F.</h4>
+                <span class="title">Business Owner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__grid">
+      <div class="section__row">
+        <div class="col-1"></div>
+        <div class="col-2"></div>
+        <div class="col-3"></div>
+        <div class="col-4"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+   <div class="footer__wrapper">
+    <div class="footer__row-3">
+      <div class="row__col-1">
+        <div class="col__logo">
+          <img src="./public/images/logo.svg" alt="">
+        </div>
+        <div class="col__links">
+          <ul class="--flex">
+            <li><a href="#" class="btn">About</a></li>
+            <li><a href="#" class="btn">Services</a></li>
+            <li><a href="#" class="btn">Projects</a></li>
+          </ul>
+        </div>
+        <div class="col__icon">
+          <ul class="footer__flex">
+            <li><a href="#"><img src="./public/images/icon-facebook.svg" alt="" width="20"></a></li>
+            <li><a href="#"><img src="./public/images/icon-instagram.svg" alt="" width="20"></a></li>
+            <li><a href="#"><img src="./public/images/icon-twitter.svg" alt="" width="20"></a></li>
+            <li><a href="#"><img src="./public/images/icon-pinterest.svg" alt="" width="20"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+   </div>
+   <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  </footer>
+  
+</body>
+</html>
