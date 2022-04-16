@@ -525,6 +525,10 @@ body {
 }
 
 @media screen and (min-width: $tablet) {
+    .article__img {
+        width: 50px;
+        margin-top: 6em;
+    }
     .section__row-1 {
         display: grid;
         grid-template-columns: repeat(3, auto);
@@ -560,6 +564,7 @@ body {
     .col__desc {
         padding: 0 9em;
         bottom: 0;
+        margin: 3em 0;
     }
 
     .col__text-area {

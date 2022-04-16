@@ -621,6 +621,10 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  .article__img {
+    width: 50px;
+    margin-top: 6em;
+  }
   .section__row-1 {
     display: -ms-grid;
     display: grid;
@@ -661,6 +665,7 @@ body {
   .col__desc {
     padding: 0 9em;
     bottom: 0;
+    margin: 3em 0;
   }
   .col__text-area {
     padding: 0 2em;
